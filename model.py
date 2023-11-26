@@ -5,9 +5,9 @@ import seaborn as sns
 
 df= pd.read_excel("iris_python.xlsx")
 
-classifications = df["Classification"].value_counts()
+#classifications = df["Classification"].value_counts()
 
-df["Classification"].unique()
+#df["Classification"].unique()
 
 y = df["Classification"]
 x = df.drop(['Classification'],axis=1)
