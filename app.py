@@ -8,7 +8,7 @@ file = pickle.load(open("savemodel.pickle","rb"))
 @app.route("/")
 def home():
     result =""
-    return render_template("index.html")
+    return render_template("index.html",**locals())
 
 @app.route("/predict", methods=["POST","GET"])
 def predict():
@@ -17,7 +17,7 @@ def predict():
     Petal_Length = float(request.form["petal_length"])
     Petal_Width = float(request.form["petal_width"])
     result = file.predict([[Sepal_Length,Sepal_Width,Petal_Length,Petal_Width]])[0]
-    return render_template("index.html", **locals())
+    return render_template("result.html", **locals())
 
 
 
