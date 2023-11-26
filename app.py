@@ -16,7 +16,7 @@ def predict():
     Sepal_Width = float(request.form["sepal_width"])
     Petal_Length = float(request.form["petal_length"])
     Petal_Width = float(request.form["petal_width"])
-    result = model.predict([[Sepal_Length,Sepal_Width,Petal_Length,Petal_Width]])[0]
+    result = file.predict([[Sepal_Length,Sepal_Width,Petal_Length,Petal_Width]])[0]
     return render_template("index.html", **locals())
 
 
